@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Triage</h1>
+
+        <h2>Atmung</h2>
+
+        <fieldset>
+            <label id="fi" for="first">
+                <input id="first" name="resp1" type="radio">
+                <input id="first2" name="resp2" type="radio" >
+                <span>gut</span>
+
+            </label>
+            <label id="se" for="second">
+                <input id="second" name="resp1" type="radio">
+                <input id="second2" name="resp2" type="radio">
+                <span>ausreichend</span>
+
+            </label>
+            <label id="th" for="third">
+                <input id="third" name="resp1" type="radio">
+                <input id="third2" name="resp2" type="radio" >
+                <span>wenig</span>
+
+            </label>
+            <label id="fo" for="fourth">
+                <input id="fourth" name="resp1" type="radio">
+                <input id="fourth2" name="resp2" type="radio">
+                <span>kaum</span>
+
+            </label>
+            <label id="ff" for="fifth">
+                <input id="fifth" name="resp1" type="radio">
+                <input id="fifth2" name="resp2" type="radio">
+                <span>keine</span>
+
+            </label>
+        </fieldset>
+        
+        <button type="button" class="btn btn-primary" id="btn1">Triage 1</button>
+        <button type="button" class="btn btn-primary-outline" id="btn2">Triage 2</button>
+
+        <!-- jQuery first, then Bootstrap JS. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
+        crossorigin="anonymous"></script>
+        <script>
+            $("#btn1").click(function(){
+                console.log("btn1");
+                $("#btn1").attr("class", "btn btn-primary");
+                $("#btn2").attr("class", "btn btn-primary-outline");
+                $("#fi").attr("for", "first");
+                $("#se").attr("for", "second");
+                $("#th").attr("for", "third");
+                $("#fo").attr("for", "fourth");
+                $("#ff").attr("for", "fifth");
+            });
+            $("#btn2").click(function(){
+                console.log("btn2");
+                $("#btn1").attr("class", "btn btn-primary-outline");
+                $("#btn2").attr("class", "btn btn-primary");
+                $("#fi").attr("for", "first2");
+                $("#se").attr("for", "second2");
+                $("#th").attr("for", "third2");
+                $("#fo").attr("for", "fourth2");
+                $("#ff").attr("for", "fifth2");
+            });
+        </script>
+    </div>
+</body>
+
+</html>

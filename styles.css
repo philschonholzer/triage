@@ -1,0 +1,48 @@
+.container {
+    margin-top: 3rem;
+}
+
+fieldset {
+    margin: 4rem 0 1rem 0;
+    display: block;
+}
+
+label {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+input {
+    display: none;
+
+}
+
+input ~ span:before {
+    content: ".";
+    display: inline-block;
+    height: 1.6rem;
+    width: 1.6rem;
+    padding-left: .1rem;
+    margin-right: .4rem;
+    border: 1px solid #bbb;
+    border-radius: .25rem;
+    color: white;
+    background-color: #f4f4f4;
+}
+
+input:checked ~ span:before {
+    content: "T1";
+    color: white;
+    background-color: hsl(0, 80%, 80%);
+}
+
+input:checked + span:before {
+    content: "T2";
+    background-color: hsl(0, 80%, 60%);
+}
+
+input:checked + input:checked + span:before {
+    content: "1|2";
+    color: white;
+    background-color: hsl(0, 80%, 60%);
+}
