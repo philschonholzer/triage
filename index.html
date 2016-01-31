@@ -15,55 +15,67 @@
 
 <body>
     <div class="container">
-        <h1>Triage</h1>
-
-        <h2>Atmung</h2>
-
-        <fieldset>
-            <label id="fi" for="first">
-                <input id="first" name="resp1" type="radio">
-                <input id="first2" name="resp2" type="radio" >
-                <span class="first">gut</span>
-
-            </label>
-            <label id="se" for="second">
-                <input id="second" name="resp1" type="radio">
-                <input id="second2" name="resp2" type="radio">
-                <span class="second">ausreichend</span>
-
-            </label>
-            <label id="th" for="third">
-                <input id="third" name="resp1" type="radio">
-                <input id="third2" name="resp2" type="radio" >
-                <span class="third">wenig</span>
-
-            </label>
-            <label id="fo" for="fourth">
-                <input id="fourth" name="resp1" type="radio">
-                <input id="fourth2" name="resp2" type="radio">
-                <span class="fourth">kaum</span>
-
-            </label>
-            <label id="ff" for="fifth">
-                <input id="fifth" name="resp1" type="radio">
-                <input id="fifth2" name="resp2" type="radio">
-                <span class="fifth">keine</span>
-
-            </label>
-        </fieldset>
+        <h1>Daniel Keller</h1>
         
-        <button type="button" class="btn btn-primary" id="btn1">Triage 1</button>
-        <button type="button" class="btn btn-primary-outline" id="btn2">Triage 2</button>
+        <div class="m-y-2">    
+            <h5>Triage</h5>    
+            <button type="button" class="btn btn-primary btn-sm" id="btn1">1</button>
+            <button type="button" class="btn btn-primary-outline btn-sm" id="btn2">2</button>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-1 bold">Atmung</div>
+            
+            <div class="col-xs-2 m-l-1" id="answer"></div>
+
+            <fieldset class="col-xs-8">
+                
+                <label id="fi" for="first" data-toggle="tooltip" data-placement="top" title="gut">
+                    <input id="first" name="resp1" type="radio" value="gut">
+                    <input id="first2" name="resp2" type="radio" >
+                    <span class="first"></span>
+                </label>
+                
+                <label id="se" for="second" data-toggle="tooltip" data-placement="top" title="ausreichend">
+                    <input id="second" name="resp1" type="radio" value="ausreichend">
+                    <input id="second2" name="resp2" type="radio">
+                    <span class="second"></span>
+                </label>
+
+                <label id="th" for="third" data-toggle="tooltip" data-placement="top" title="wenig">
+                    <input id="third" name="resp1" type="radio" value="wenig">
+                    <input id="third2" name="resp2" type="radio" >
+                    <span class="third"></span>
+                </label>
+
+                <label id="fo" for="fourth" data-toggle="tooltip" data-placement="top" title="kaum">
+                    <input id="fourth" name="resp1" type="radio" value="kaum">
+                    <input id="fourth2" name="resp2" type="radio">
+                    <span class="fourth"></span>
+                </label>
+
+                <label id="ff" for="fifth" data-toggle="tooltip" data-placement="top" title="keine">
+                    <input id="fifth" name="resp1" type="radio" value="keine">
+                    <input id="fifth2" name="resp2" type="radio">
+                    <span class="fifth"></span>
+                </label>
+                
+            </fieldset>
+        </div>
 
         <!-- jQuery first, then Bootstrap JS. -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
         <script>
+            $(':radio[name="resp1"]').change(function() {
+                $('#answer').text($(this).filter(':checked').val());
+            });
             $("#btn1").click(function(){
                 console.log("btn1");
-                $("#btn1").attr("class", "btn btn-primary");
-                $("#btn2").attr("class", "btn btn-primary-outline");
+                $("#btn1").attr("class", "btn btn-primary btn-sm");
+                $("#btn2").attr("class", "btn btn-primary-outline btn-sm");
                 $("#fi").attr("for", "first");
                 $("#se").attr("for", "second");
                 $("#th").attr("for", "third");
@@ -72,13 +84,16 @@
             });
             $("#btn2").click(function(){
                 console.log("btn2");
-                $("#btn1").attr("class", "btn btn-primary-outline");
-                $("#btn2").attr("class", "btn btn-primary");
+                $("#btn1").attr("class", "btn btn-primary-outline btn-sm");
+                $("#btn2").attr("class", "btn btn-primary btn-sm");
                 $("#fi").attr("for", "first2");
                 $("#se").attr("for", "second2");
                 $("#th").attr("for", "third2");
                 $("#fo").attr("for", "fourth2");
                 $("#ff").attr("for", "fifth2");
+            });
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
             });
         </script>
     </div>

@@ -2,13 +2,13 @@
     margin-top: 3rem;
 }
 
-fieldset {
-    margin: 4rem 0 1rem 0;
-    display: block;
-}
+/*fieldset {
+    margin: 1rem 0 1rem 0;
+    display: inline;
+}*/
 
 label {
-    margin-right: 1rem;
+    /*margin-right: 1rem;*/
     cursor: pointer;
 }
 
