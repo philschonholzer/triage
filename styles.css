@@ -22,27 +22,46 @@ input ~ span:before {
     display: inline-block;
     height: 1.6rem;
     width: 1.6rem;
-    padding-left: .1rem;
+    font-size: .8rem;
+    font-weight: bold;
+    text-align: center;
     margin-right: .4rem;
+    padding-top: .2rem;
     border: 1px solid #bbb;
     border-radius: .25rem;
     color: white;
     background-color: #f4f4f4;
 }
 
-input:checked ~ span:before {
+input:checked + input + span:before {
     content: "T1";
-    color: white;
-    background-color: hsl(0, 80%, 80%);
 }
 
 input:checked + span:before {
     content: "T2";
-    background-color: hsl(0, 80%, 60%);
 }
 
 input:checked + input:checked + span:before {
     content: "1|2";
-    color: white;
-    background-color: hsl(0, 80%, 60%);
 }
+
+input:checked ~ span.first:before {
+    background-color: hsl(120,39%, 54%);
+}
+
+input:checked ~ span.second:before {
+    background-color: hsl(194, 66%, 61%);
+}
+
+input:checked ~ span.third:before {
+    background-color: hsl(40, 84%, 50%);
+}
+
+input:checked ~ span.fourth:before {
+    background-color: hsl(16, 84%, 62%);
+}
+
+input:checked ~ span.fifth:before {
+    background-color: hsl(2, 64%, 58%);
+}
+
